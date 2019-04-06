@@ -5,10 +5,13 @@ import (
 	"net/url"
 )
 
+// URL extends the url.URL to add implementations
+// to the Marshaler and Unmarshaler interfaces
 type URL struct {
 	*url.URL
 }
 
+// UnmarshalJSON transforms the b to a string
 func (u *URL) UnmarshalJSON(b []byte) error {
 	var s string
 	if err := json.Unmarshal(b, &s); err != nil {
@@ -24,6 +27,7 @@ func (u *URL) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
+// MarshalJSON transforms the url to a String
 func (u URL) MarshalJSON() ([]byte, error) {
 	if u.URL == nil {
 		return json.Marshal(nil)
