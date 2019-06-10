@@ -1,5 +1,7 @@
 # URL Marshaler
 
+[![GoDoc](https://godoc.org/github.com/xescugc/url-marshaler?status.svg)](https://godoc.org/github.com/xescugc/url-marshaler)
+
 It's a simple type that implements the [Marshaler](https://golang.org/pkg/encoding/json/#Marshaler) and [Unmarshaler](https://golang.org/pkg/encoding/json/#Unmarshaler) interfaces for a URL transforming it to an string.
 
 ## Installation
