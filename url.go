@@ -11,6 +11,13 @@ type URL struct {
 	*url.URL
 }
 
+// NewURL returns a new marshaler.URL from u
+func NewURL(u *url.URL) URL {
+	return URL{
+		URL: u,
+	}
+}
+
 // UnmarshalJSON transforms the b to a string
 func (u *URL) UnmarshalJSON(b []byte) error {
 	var s string

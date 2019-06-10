@@ -14,6 +14,19 @@ type TestStruct struct {
 	URL marshaler.URL `json:"url"`
 }
 
+func TestNewURL(t *testing.T) {
+	u, err := url.Parse("http://example.com")
+	if err != nil {
+		t.Fatalf("error parsing the url %s", err)
+	}
+	ts := TestStruct{URL: marshaler.URL{URL: u}}
+	te := TestStruct{URL: marshaler.NewURL(u)}
+
+	if ts != te {
+		t.Fatalf("expect %+v to be equal to %+v", ts, te)
+	}
+}
+
 func TestMarshalJSON(t *testing.T) {
 	t.Run("Success", func(t *testing.T) {
 		u, err := url.Parse("http://example.com")
