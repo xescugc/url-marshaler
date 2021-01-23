@@ -1,5 +1,7 @@
 # URL Marshaler
 
+:warning: THIS LIB HAS BEEN INTEGRATED INTO https://github.com/xescugc/marshaler USE IT INSTEAD :warning:
+
 [![GoDoc](https://godoc.org/github.com/xescugc/url-marshaler?status.svg)](https://godoc.org/github.com/xescugc/url-marshaler)
 
 It's a simple type that implements the [Marshaler](https://golang.org/pkg/encoding/json/#Marshaler) and [Unmarshaler](https://golang.org/pkg/encoding/json/#Unmarshaler) interfaces for a URL transforming it to an string.
@@ -41,7 +43,3 @@ func main() {
   // { "name": "Pepito", "url": "http://example.com" }
 }
 ```
-
-## More?
-
-Ideally would be grate to add more types, the it may be good to create a custom pkg `marshaler` for example, but when I (or some one) has the use case we can create that new pkg.
